@@ -1,0 +1,59 @@
+name: CI — my-first-spec-project
+
+on:
+  push:
+    branches: [master, main, develop]
+  pull_request:
+    branches: [master, main]
+
+jobs:
+  validate-specs:
+    name: Validate SDD Structure
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check README exists
+        run: |
+          if [ ! -f "README.md" ]; then
+            echo "::error::README.md não encontrado no repositório"
+            exit 1
+          fi
+          echo "✅ README.md encontrado"
+
+      - name: Check GEMINI.md exists
+        run: |
+          if [ ! -f "GEMINI.md" ]; then
+            echo "::error::GEMINI.md não encontrado"
+            exit 1
+          fi
+          echo "✅ GEMINI.md encontrado"
+
+      - name: Check .sdd structure
+        run: |
+          if [ ! -d ".sdd" ]; then
+            echo "::warning::.sdd/ ainda não inicializado — execute /sdd:spec-init para começar"
+          else
+            echo "✅ Estrutura .sdd/ encontrada"
+            ls -la .sdd/
+          fi
+
+      - name: Check for open specs
+        run: |
+          SPECS_DIR=".sdd/specs"
+          if [ -d "$SPECS_DIR" ]; then
+            COUNT=$(find "$SPECS_DIR" -name "spec.json" | wc -l)
+            echo "📋 Total de specs encontradas: $COUNT"
+            find "$SPECS_DIR" -name "spec.json" -exec echo "  - {}" \;
+          else
+            echo "ℹ️  Nenhuma spec ativa em .sdd/specs/ (diretório não existe ainda)"
+          fi
+
+      - name: Summary
+        run: |
+          echo ""
+          echo "═══════════════════════════════════════════"
+          echo "  Validação SDD concluída com sucesso ✅"
+          echo "  Repositório: ericson-j-santos/my-first-spec-project"
+          echo "═══════════════════════════════════════════"
