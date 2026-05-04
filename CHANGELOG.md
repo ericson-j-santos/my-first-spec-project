@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.1] - 2026-05-04
+
+### Added
+
+- CHANGELOG publicado e release v1.0.1 criada no GitHub.
+- Estrutura de CI validada via GitHub Actions (`ci.yml`).
+
 ## [1.0.0] - 2026-05-03
 
 ### Added
