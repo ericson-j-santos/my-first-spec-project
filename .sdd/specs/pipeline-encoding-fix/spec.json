@@ -1,0 +1,23 @@
+{
+  "feature_name": "pipeline-encoding-fix",
+  "created_at": "2026-06-14T00:00:00Z",
+  "updated_at": "2026-06-15T00:00:00Z",
+  "language": "pt-BR",
+  "phase": "implemented",
+  "approvals": {
+    "requirements": {
+      "generated": true,
+      "approved": true
+    },
+    "design": {
+      "generated": true,
+      "approved": true
+    },
+    "tasks": {
+      "generated": true,
+      "approved": true
+    }
+  },
+  "ready_for_implementation": true,
+  "implementation_notes": "Task 1.1: sem mojibake nos arquivos Python (estado válido). Task 1.2: FastAPI retorna application/json por padrão (utf-8). Task 2: TestEncodingRegressao consolidado em test_pipeline.py (duplicata removida). Task 3: step anti-mojibake já presente em ci.yml antes de Run tests."
+}

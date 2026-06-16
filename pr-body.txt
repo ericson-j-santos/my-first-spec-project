@@ -1,0 +1,24 @@
+## Summary
+- Ports all 11 Gemini SDD slash commands to Claude Code format under .claude/commands/sdd/
+- Adds CLAUDE.md as the Claude Code equivalent of GEMINI.md
+- Completes the AI-tool-agnostic design (Gemini + Claude Code both supported)
+
+## Commands added
+- /sdd:spec-init — Inicializa nova spec com estrutura de diretórios
+- /sdd:spec-requirements — Gera requirements em formato EARS
+- /sdd:spec-design — Cria documento de design técnico
+- /sdd:spec-tasks — Gera lista de tarefas de implementação
+- /sdd:spec-impl — Executa tarefas com metodologia TDD
+- /sdd:spec-status — Exibe progresso da spec
+- /sdd:validate-gap — Analisa gap entre requirements e codebase existente
+- /sdd:validate-design — Revisão interativa de qualidade do design
+- /sdd:validate-impl — Valida implementação contra specs
+- /sdd:steering — Gerencia .sdd/steering/ como memória do projeto
+- /sdd:steering-custom — Cria steering documents customizados
+
+## Test plan
+- [ ] Clonar repositório e abrir no Claude Code
+- [ ] Executar /sdd:spec-init "minha feature" e verificar criação de .sdd/specs/feature/
+- [ ] Verificar que CLAUDE.md é lido automaticamente como contexto do projeto
+
+🤖 Generated with Claude Code https://claude.com/claude-code
