@@ -14,6 +14,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
       - name: Check README exists
         run: |
           if [ ! -f "README.md" ]; then
@@ -39,16 +43,11 @@ jobs:
             ls -la .sdd/
           fi
 
-      - name: Check for open specs
-        run: |
-          SPECS_DIR=".sdd/specs"
-          if [ -d "$SPECS_DIR" ]; then
-            COUNT=$(find "$SPECS_DIR" -name "spec.json" | wc -l)
-            echo "📋 Total de specs encontradas: $COUNT"
-            find "$SPECS_DIR" -name "spec.json" -exec echo "  - {}" \;
-          else
-            echo "ℹ️  Nenhuma spec ativa em .sdd/specs/ (diretório não existe ainda)"
-          fi
+      - name: Validate canonical spec metadata and dashboard
+        run: python scripts/sdd_status.py --check
+
+      - name: Run validator tests
+        run: python -m unittest discover -s tests -v
 
       - name: Summary
         run: |

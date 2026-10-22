@@ -96,9 +96,13 @@ Pense como uma construção: você não pede para um pedreiro começar a constru
 
 | Funcionalidade | Fase atual | Próxima ação |
 | --- | --- | --- |
-| `pipeline-encoding-fix` | design gerado | Revisar `design.md` e aprovar → `/sdd:spec-tasks pipeline-encoding-fix` |
-| `backlog-redmine-sync` | inicializado | `/sdd:spec-requirements backlog-redmine-sync` |
 | `ai-metrics-incident-report` | inicializado | `/sdd:spec-requirements ai-metrics-incident-report` |
+| `autenticacao-de-usuarios` | design gerado · bloqueado | Os documentos atuais descrevem exportação em PDF; substituir ou renomear antes de aprovar |
+| `backlog-redmine-sync` | inicializado | `/sdd:spec-requirements backlog-redmine-sync` |
+| `exemplo-feature` | design gerado · requer revisão | Revisar requisitos e design legados antes de gerar tarefas |
+| `pipeline-encoding-fix` | implementado | Validar a implementação e manter a spec sincronizada |
+
+O arquivo [`sdd-dashboard.html`](./sdd-dashboard.html) é gerado de forma determinística a partir dos cinco `spec.json`. Para validar os metadados e confirmar que o dashboard está atualizado, execute `python scripts/sdd_status.py --check`.
 
 ---
 
