@@ -1,0 +1,26 @@
+{
+  "feature_name": "exemplo-feature",
+  "created_at": "2026-06-15T00:00:00Z",
+  "updated_at": "2026-10-22T00:00:00Z",
+  "language": "pt-BR",
+  "phase": "design-generated",
+  "approvals": {
+    "requirements": {
+      "generated": true,
+      "approved": false
+    },
+    "design": {
+      "generated": true,
+      "approved": false
+    },
+    "tasks": {
+      "generated": false,
+      "approved": false
+    }
+  },
+  "ready_for_implementation": false,
+  "validation": {
+    "status": "review-required",
+    "reason": "Spec legada de exportação em PDF sem evidência de aprovação; revisar requisitos e design antes de gerar tarefas."
+  }
+}

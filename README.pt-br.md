@@ -41,11 +41,24 @@ Fase 2 (Implementação):
   specs/        ← especificações individuais de features
   steering/     ← contexto e regras globais do projeto
 GEMINI.pt-br.md ← guia da metodologia SDD
+scripts/sdd_status.py ← valida os metadados e gera o dashboard
 .gemini/        ← configurações do Gemini
 .github/
   workflows/
     ci.yml      ← validação da estrutura SDD
 ```
+
+## Specs em andamento
+
+| Funcionalidade | Fase atual | Próxima ação |
+| --- | --- | --- |
+| `ai-metrics-incident-report` | inicializado | `/sdd:spec-requirements ai-metrics-incident-report` |
+| `autenticacao-de-usuarios` | design gerado · bloqueado | Os documentos atuais descrevem exportação em PDF; substituir ou renomear antes de aprovar |
+| `backlog-redmine-sync` | inicializado | `/sdd:spec-requirements backlog-redmine-sync` |
+| `exemplo-feature` | design gerado · requer revisão | Revisar requisitos e design legados antes de gerar tarefas |
+| `pipeline-encoding-fix` | implementado | Validar a implementação e manter a spec sincronizada |
+
+O arquivo [`sdd-dashboard.html`](./sdd-dashboard.html) é gerado de forma determinística a partir dos cinco `spec.json`. Use `python scripts/sdd_status.py --check` para validar os metadados e detectar divergências.
 
 ---
 

@@ -1,0 +1,26 @@
+{
+  "feature_name": "autenticacao-de-usuarios",
+  "created_at": "2026-05-14T00:00:00Z",
+  "updated_at": "2026-10-22T00:00:00Z",
+  "language": "pt-BR",
+  "phase": "design-generated",
+  "approvals": {
+    "requirements": {
+      "generated": true,
+      "approved": false
+    },
+    "design": {
+      "generated": true,
+      "approved": false
+    },
+    "tasks": {
+      "generated": false,
+      "approved": false
+    }
+  },
+  "ready_for_implementation": false,
+  "validation": {
+    "status": "blocked",
+    "reason": "requirements.md e design.md descrevem exportação de relatórios em PDF, não autenticação; substituir ou renomear os documentos antes de aprovar."
+  }
+}
